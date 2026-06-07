@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prof-IA · Aprende a usar la IA, hablando</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">🎓</span>
+      <div>
+        <h1>Prof-IA</h1>
+        <p class="tagline">Tu profesor de IA en tiempo real. Rapido, seguro, fiable, ameno y economico.</p>
+      </div>
+    </div>
+    <div id="status" class="status idle">Desconectado</div>
+  </header>
+
+  <main>
+    <section class="conversation">
+      <div class="controls">
+        <button id="connectBtn" class="primary">🎙️ Empezar a hablar</button>
+        <button id="hangupBtn" class="ghost" disabled>Colgar</button>
+        <label class="mute"><input type="checkbox" id="textMode" /> Solo texto</label>
+      </div>
+
+      <div id="transcript" class="transcript" aria-live="polite">
+        <div class="hint">
+          Pulsa <b>Empezar a hablar</b> y cuentale a Prof-IA que quieres lograr con la IA.
+          Te recomendara el modelo ideal para ti y, si lo necesitas, te creara un agente privado.
+        </div>
+      </div>
+
+      <form id="textForm" class="text-input" hidden>
+        <input id="textInput" placeholder="Escribe a Prof-IA..." autocomplete="off" />
+        <button class="primary">Enviar</button>
+      </form>
+    </section>
+
+    <aside class="panel">
+      <h2>Recomendaciones</h2>
+      <div id="recos" class="recos">
+        <p class="empty">Aqui apareceran los modelos de IA que mejor encajan con tu caso.</p>
+      </div>
+
+      <h2>Tu agente privado</h2>
+      <div id="agentBox" class="agent-box">
+        <p class="empty">Si Prof-IA crea un agente a tu medida, veras aqui su URL temporal y el plazo
+        (maximo 1 mes) para transferirlo a tu dominio.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer>
+    <p>La clave de OpenAI vive solo en el servidor; el navegador usa tokens efimeros. ·
+       Verifica siempre la informacion critica.</p>
+  </footer>
+
+  <audio id="botAudio" autoplay></audio>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
